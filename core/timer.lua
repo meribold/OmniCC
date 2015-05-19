@@ -10,7 +10,7 @@ local IconSize = 36
 local Padding = 0
 
 local Day, Hour, Minute = 86400, 3600, 60
-local Dayish, Hourish, Minuteish, Soonish = 3600 * 23.5, 60 * 59.5, 59.5, 5.5
+local Dayish, Hourish, Minuteish, Soonish = 3600 * 23.5, 60 * 59.5, 99.5, 5.5
 local HalfDayish, HalfHourish, HalfMinuteish = Day/2 + 0.5, Hour/2 + 0.5, Minute/2 + 0.5
 
 local floor, min, type = floor, min, type
@@ -196,7 +196,7 @@ function Timer:GetNextUpdate(remain)
 		
 	elseif remain < Hourish then
 		local minutes = round(remain/Minute)
-		if minutes > 1 then
+		if minutes > 2 then
 			return remain - (minutes*Minute - HalfMinuteish)
 		end
 		return remain - Minuteish + 0.01
