@@ -224,7 +224,7 @@ function Timer:GetTimeText(remain)
 		return '%.1f', remain
 	elseif remain < Minuteish then
 		local seconds = round(remain)
-		return seconds ~= 0 and seconds or ''
+		return seconds
 	elseif remain < sets.mmSSDuration then
 		local seconds = round(remain)
 		return '%d:%02d', seconds/Minute, seconds%Minute
